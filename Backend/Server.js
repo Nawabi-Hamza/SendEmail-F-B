@@ -31,15 +31,24 @@ app.listen(4000,()=>{console.log("server is running in 4000 port")})
         //     text: 'That was easy!'
         // };
 app.post("/contactMail",(req,res)=>{
-    // res.send("post methode")    
+    // res.send("post methode") 
+    var emailto =" hamza.nawabi119@gmail.com   "
     const name = req.body.name
     const email = req.body.email
     const message = req.body.message
     const doctor = req.body.doctor
-
+    if(doctor==="Ahmadi"){
+        var emailto = "h.nawabi007@gmail.com"
+    }
+    else if(doctor==="Noori"){
+        var emailto = "zohaib.ayubi002@gmail.com"
+    }
+    else if(doctor==="Azizi"){
+        var emailto = "fayaz.nasrat10@gmail.com"
+    }
     const mail = {
         from:"hamza.nawabi119@gmail.com",
-        to:"hamza.nawabi119@gmail.com",
+        to:emailto,
         subject:"message Send From The Nawabi Blog",
         html:`
         User_Name:<b>${name}</b><br/>
